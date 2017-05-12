@@ -5,6 +5,7 @@ jest.dontMock('../../../app/components/CartItem.js');
 jest.dontMock('../mocks/genMockItem.js');
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 //var TestUtils = React.addons.TestUtils;
 let TestUtils = require('react-addons-test-utils');
 

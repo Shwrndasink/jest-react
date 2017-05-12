@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/components/CartItem.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">app/components/CartItem.js</span></h1>
+    <h2>
+        Statements: <span class="metric">83.33% <small>(10 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">80% <small>(4 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">83.33% <small>(10 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">app/components/</a> &#187; CartItem.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+let React = require('react');
+let conversionHelper = require('./../helpers/conversionHelper.js');
+let itemsHelper = require('./../helpers/itemsHelper.js');
+&nbsp;
+module.exports = React.createClass({
+    getDefaultProps: function() {
+      return {
+        item:{
+			name:"default item",
+			price:1
+		},
+        locale:{
+			country:undefined
+		},
+      };
+    },
+    getLocalizedCurrencySymbol(){
+      return conversionHelper.getSymbolForCountry(this.props.locale.country);
+    },
+    getLocalizedPriceString(){
+      let price = conversionHelper.convertFromUSD(this.props.locale.country, this.props.item.priceUSD);
+      let currencyString = conversionHelper.toCurrencyString(price);
+      return currencyString;
+    },
+	removeItem(e)<span class="fstat-no" title="function not covered" >{</span>
+		e.<span class="cstat-no" title="statement not covered" >preventDefault();</span>
+		it<span class="cstat-no" title="statement not covered" >emsHelper.removeItem(this.props.item);</span>
+	},
+    render(){
+        return (
+            &lt;section&gt;
+				&lt;h4&gt;{this.props.item.name}&lt;/h4&gt;
+				&lt;p role="price"&gt;
+					Your price - &lt;span className="currencySymbolDisplay"&gt;{this.getLocalizedCurrencySymbol()}&lt;/span&gt;
+					&lt;span className="cartItemPriceDisplay"&gt;{this.getLocalizedPriceString()}&lt;/span&gt;
+				&lt;/p&gt;
+				&lt;p role="description"&gt;{this.props.item.description}&lt;/p&gt;
+				&lt;form onSubmit={this.removeItem}&gt;
+					&lt;button role="remove"&gt;Remove this item from the cart&lt;/button&gt;
+				&lt;/form&gt;
+			&lt;/section&gt;
+        )
+    }
+})
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 12 2017 13:13:14 GMT-0600 (MDT)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -17,11 +17,14 @@
     ],
     "moduleFileExtensions": [
       "js",
+	  "jsx",
       "es6"
     ],
     "collectCoverage": true,
     "unmockedModulePathPatterns": [
-      "react"
+      "react",
+	  "react-dom",
+	  "react-addons-test-utils"
     ]
   },
   "dependencies": {
